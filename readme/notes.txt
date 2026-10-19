@@ -1,0 +1,8 @@
+python --version 
+backend=> 
+   python -m venv venv
+   venv\Scripts\activate.bat 
+   python -m pip install django
+   python -m django --version
+   django-admin startproject config .
+   python manage.py runserver
