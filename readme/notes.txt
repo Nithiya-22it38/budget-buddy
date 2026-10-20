@@ -6,3 +6,29 @@ backend=>
    python -m django --version
    django-admin startproject config .
    python manage.py runserver
+
+GitHub :
+   git init
+   git add .
+   git commit -m "Initial Django project setup"
+   git branch -M main
+   git remote add origin https://github.com/YOUR-USERNAME/budget-buddy.git
+   git push -u origin main
+
+pip install djangorestframework djangorestframework-simplejwt django-cors-headers
+
+   venv) G:\budget_buddy\backend>pip list
+Package                       Version
+----------------------------- -------
+asgiref                       3.12.1
+Django                        6.1.2
+django-cors-headers           4.9.0
+djangorestframework           3.18.3
+djangorestframework_simplejwt 5.5.1
+pip                           25.0.1
+PyJWT                         2.15.1
+python-dotenv                 1.2.4
+sqlparse                      0.6.0
+tzdata                        2026.5
+
+
