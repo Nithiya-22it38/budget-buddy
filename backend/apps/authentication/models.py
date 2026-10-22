@@ -1,24 +1,16 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+ROLE_CHOICES = [
+    ('student', 'Student'),
+    ('premium', 'Premium User'),
+    ('admin', 'Admin'),
+]
+
 
 class User(AbstractUser):
-    class Role(models.TextChoices):
-        STUDENT = 'student', 'Student'
-        PREMIUM = 'premium', 'Premium User'
-        ADMIN = 'admin', 'Admin'
-
     email = models.EmailField(unique=True)
-    role = models.CharField(
-        max_length=10,
-        choices=Role.choices,
-        default=Role.STUDENT,
-    )
-
-    def save(self, *args, **kwargs):
-        if self.is_superuser:
-            self.role = self.Role.ADMIN
-        super().save(*args, **kwargs)
+    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='student')
 
     def __str__(self):
         return self.username
